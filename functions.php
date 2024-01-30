@@ -31,9 +31,9 @@ function getBonusDay($year, $month) {
     $bonus_day = date('Y-m-d', strtotime($year . '-' . $month . '-15'));
     $bonus_day_of_month = date('l', strtotime($bonus_day));
     if ($bonus_day_of_month == 'Saturday') {
-        $bonus = date('Y-m-d', strtotime($year . '-' . $month . '-17'));
+        $bonus = date('Y-m-d', strtotime($year . '-' . $month . '-19')); // Fix: used to return next Monday
     } elseif ($bonus_day_of_month == 'Sunday') {
-        $bonus = date('Y-m-d', strtotime($year . '-' . $month . '-16'));
+        $bonus = date('Y-m-d', strtotime($year . '-' . $month . '-18')); // Fix: used to return next Monday
     } else {
         $bonus = $bonus_day;
     }
